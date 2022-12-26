@@ -1,0 +1,18 @@
+.extension-scroll::-webkit-scrollbar {
+  background-color: 'transparent';
+  width: 5px;
+  height: 10px;
+  border-width: 1px;
+  border-radius: 20px;
+
+}
+
+.extension-scroll::-webkit-scrollbar-thumb {
+  background: #3183c8;
+  border-style: 'solid';
+  border-width: 1px;
+  border-radius: 20px;
+}
+.extension-scroll::-webkit-scrollbar-track {
+  position: absolute;
+}
