@@ -27,12 +27,16 @@ function addSideBar(summary) {
 }
 
 if (text) {
-  fetch('https://httpbin.org/post', {
+  fetch('http://localhost:3000/api/summarize', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: { text: JSON.stringify(text) },
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ text }),
+    mode: 'cors',
   }).then(
     (response) => {
+      console.log('RESPONSE', response);
       if (response.status !== 200) {
         console.log(`Looks like there was a problem. Status Code: ${response.status}`);
         return;
