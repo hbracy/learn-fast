@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "LearnFast",
+  "description": "Any webpage instantly summarized into bullet points",
+  "version": "1.0",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "128": "images/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["<all_urls>"]
+
+    }
+  ],
+  "permissions": ["activeTab", "scripting"],
+  "commands": {
+    "run-summary": {
+      "suggested_key": {
+        "default": "Ctrl+U",
+        "mac": "Command+U"
+      },
+      "description": "Run \"summary\" on the current page."
+    }
+  }
+}
