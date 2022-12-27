@@ -17,6 +17,7 @@
       "js": ["scripts/content.js"],
       "matches": ["<all_urls>"],
       "css": [ "styles.css" ]
+
     }
   ],
   "permissions": ["activeTab", "scripting"],
