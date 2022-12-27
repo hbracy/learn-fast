@@ -4,6 +4,7 @@ function checkCommandShortcuts() {
   chrome.commands.getAll((commands) => {
     const missingShortcuts = [];
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const { name, shortcut } of commands) {
       if (shortcut === '') {
         missingShortcuts.push(name);
@@ -28,7 +29,6 @@ chrome.runtime.onInstalled.addListener((reason) => {
 
 // When the user clicks on the extension action
 chrome.commands.onCommand.addListener(async (command, tab) => {
-  console.log('PRESSED');
   // We retrieve the action badge to check if the extension is 'ON' or 'OFF'
   const prevState = await chrome.action.getBadgeText({ tabId: tab.id });
   // Next state will always be the opposite

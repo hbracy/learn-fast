@@ -30,6 +30,7 @@ chrome.runtime.onMessage.addListener((nextState) => {
     // Inject to current page
     document.querySelector('body').prepend(div);
 
+    // eslint-disable-next-line no-inner-declarations
     function addText(summary) {
       div.innerText = '';
       const bullets = summary.split('\u2022');
@@ -42,7 +43,7 @@ chrome.runtime.onMessage.addListener((nextState) => {
     }
 
     if (text) {
-      fetch('http://localhost:3000/api/summarize', {
+      fetch('http://www.aidummy.co/api/summarize', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
